@@ -19,7 +19,7 @@ Navigate to the app directory and execute the following command in your terminal
 ```bash
 pip3 install -r requirements.txt
 ```
-### Python 2
+### Python 2 or within the Anaconda Prompt
 
 ```bash
 pip install -r requirements.txt
