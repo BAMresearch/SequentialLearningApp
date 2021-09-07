@@ -52,22 +52,22 @@ The app is divided into the four main windows "Upload", "Data Info", "Design Spa
 ## Upload
 In the upload window of the app, the materials data in CSV format can be imported via a dialog. An option to set the CSV separator, the decimal separator and to delete non-numeric data is available. Additionally, lines at the beginning of the file can be skipped (e.g., header information, etc.). At the end of this process, the data is displayed to the user to allow a plausibility check. Here it can be checked quickly and easily whether decimal places are specified correctly, and all data are numeric.
 ![What is this](images/11.png)
-![What is this](12.png)
-![What is this](13.png)
+![What is this](images/12.png)
+![What is this](images/13.png)
 
 *An example file has been extracted from the paper Xie et al. 2020 https://doi.org/10.1016/j.conbuildmat.2020.119380 and is provided in this repository.
 
 ## Data Info
 This window gives a detailed overview of the uploaded data. Besides the data preview, there is a detailed list of all variables ('Info' button) and some basic statistical characteristics of the variables ('Stats' button).
-![What is this](21.png)
-![What is this](22.png)
-![What is this](23.png)
+![What is this](images/21.png)
+![What is this](images/22.png)
+![What is this](images/23.png)
 
 ## Design Space Explorer
 The Design Space Explorer allows the visualization of complex relationships in the data. Here, specific dependencies between selected variables can be displayed as a scatter plot, the interrelationships and distributions of the variables can be mapped as a scatter matrix, and correlations can be visualized as a correlation heatmap. These tools allow a quick visual overview, e.g. of co-linearities of the characteristics for feature selection or trade-offs between different material properties, which are to be optimized.
-![What is this](31.png)
-![What is this](32.png)
-![What is this](33.png)
+![What is this](images/31.png)
+![What is this](images/32.png)
+![What is this](images/33.png)
 
 ## Sequential Learning
 This window provides a SL framework divided into the tabs "Settings" - here the optimization scenario can be defined - and "Seqential Learning Parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
@@ -78,7 +78,7 @@ The target can be specified as a quantile of the given properties (or their comb
 The sample threshold determines the restriction of the initial training data. If it was not restricted, it would be possible that the searched material is already contained in the initial data - which would make SL superfluous. The sample threshold is therefore always lower than the target threshold. 
 The initial sample size can be chosen below. Some SL algorithms require at least 3 samples. It is recommended to not choose less than 4 initial samples. 
 The "Visualize Settings" button generates a qualitative preview of your selected SL task. It presents your data in reduced dimensions using the TSNE algorithm. The location of the available candidates (Determined by the Sample threshold), the targets (determined by the Target threshold) and the samples that may be explored with SL are displayed in color. This makes it easy to visualize the impact of the thresholds and adding or removing features or targets. 
-![What is this](4.1.png)
+![What is this](images/4.1.png)
 
 #### Sequential Learning Parameters
 This tab lets the user select from several Machine Learning (ML) algorithms and utility functions:
@@ -94,8 +94,8 @@ This tab lets the user select from several Machine Learning (ML) algorithms and 
 Some utility functions, such as MEID and MLID, allow to adjust further hyper parameters. As mentioned above, more details on ML algorithms and utility functions can be found in Völker et al. 2021 (Link: http://dx.doi.org/10.13140/RG.2.2.18388.94087/1 ).
 The number of randomized SL runs can be set with the “# of SL runs” slider (standard value=30). The “Run” button executes a simulated experiments where the selected SL algorithms solve the optimization problem that has been specified in the “Settings” tab for the set number of SL runs. 
 
-![What is this](42.png)
-![What is this](43.png)
+![What is this](images/42.png)
+![What is this](images/43.png)
 
 #### Result diagrams
 The first diagram shows two plots that ilustrat how fast a selected SL algorithm can find its path to the target in input space (left) and output space (right). The progress in the input space is represented in terms of the minimum distances in the design space from the already discovered materials to the targets per SL iterations. The progress in the output space is represented in terms of maximum  property combination from the already discovered material per SL iterations. 
@@ -150,7 +150,7 @@ Targets name: Name of the (output) targets
 ##### Detailed Result
 Req. experiments (all): A list of all results in terms of the number of required experiments. 
 
-![What is this](44.png)
+![What is this](images/44.png)
 
 ## Conclusion
 Serial data collection of SL, even if more successful than RP, can be detrimental in a real-world application, as waiting for experimental results could delay experimental progress. This is especially the case for materials whose synthesis is complex and whose material properties take time to develop or characterize (e.g., 28-day compressive strength of concrete). Collecting all samples at once or in batches may be more successful. 
