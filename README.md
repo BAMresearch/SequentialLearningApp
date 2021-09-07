@@ -51,7 +51,7 @@ The app is divided into the four main windows "Upload", "Data Info", "Design Spa
 
 ## Upload
 In the upload window of the app, the materials data in CSV format can be imported via a dialog. An option to set the CSV separator, the decimal separator and to delete non-numeric data is available. Additionally, lines at the beginning of the file can be skipped (e.g., header information, etc.). At the end of this process, the data is displayed to the user to allow a plausibility check. Here it can be checked quickly and easily whether decimal places are specified correctly, and all data are numeric.
-![What is this](11.png)
+![What is this](images/11.png)
 ![What is this](12.png)
 ![What is this](13.png)
 
