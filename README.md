@@ -74,6 +74,9 @@ This window provides a SL framework divided into the tabs "Settings" - here the 
 
 #### Settings
 This window lets the user interactively set up the boundary conditions of the SL problem. The input feature and target properties can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). The optimization is then based on the sum (or difference - depending on whether maximization or minimization is desired) of the normalized properties. 
+**NEW
+SLAMD can now consider known targets. Not all targets need verification in the lab. Costs and CO2 footprint, for instance, can be collected from databases upfront. However, they can play an important role in optimization, especially in the case of green materials. The new feature "Fixed target selection" now allows to include such data into the optimization. Their uncertainty is considered to be zero in the  MLI and MLID and MU utility.
+
 The target can be specified as a quantile of the given properties (or their combinations in case of Multi-Objective Optimization). A lower target threshold (e.g. 90%) accelerates the SL optimization. However, this makes it increasingly difficult for SL to outperform a random process. 
 The sample threshold determines the restriction of the initial training data. If it was not restricted, it would be possible that the searched material is already contained in the initial data - which would make SL superfluous. The sample threshold is therefore always lower than the target threshold. 
 The initial sample size can be chosen below. Some SL algorithms require at least 3 samples. It is recommended to not choose less than 4 initial samples. 
@@ -94,10 +97,9 @@ This tab lets the user select from several Machine Learning (ML) algorithms and 
 Some utility functions, such as MEID and MLID, allow to adjust further hyper parameters. As mentioned above, more details on ML algorithms and utility functions can be found in Völker et al. 2021 (Link: http://dx.doi.org/10.13140/RG.2.2.18388.94087/1 ).
 The number of randomized SL runs can be set with the “# of SL runs” slider (standard value=30). The “Run” button executes a simulated experiments where the selected SL algorithms solve the optimization problem that has been specified in the “Settings” tab for the set number of SL runs. 
 
-![What is this](images/42.png)
-![What is this](images/43.png)
+## Live plots
+Three plots occur after first iterations to let you monitor the progress of the current SL run. 
 
-#### Result diagrams
 The first diagram shows two plots that ilustrat how fast a selected SL algorithm can find its path to the target in input space (left) and output space (right). The progress in the input space is represented in terms of the minimum distances in the design space from the already discovered materials to the targets per SL iterations. The progress in the output space is represented in terms of maximum  property combination from the already discovered material per SL iterations. 
 
 If the discovered materials remain far from the target (in the plot on the left) for many iterations, a more explorative approach may help to improve performance. If it converges quickly, a more exploiting algorithm may improve performance even further. 
@@ -105,6 +107,14 @@ If the discovered materials remain far from the target (in the plot on the left)
 If the sampled properties remain low (in the plot on the right) for many iterations it shows, that the predictive power of the ML algorithm is too low. Choosing a better algorithm may improve the performance. 
 
 The histogram below compares the performance in terms of experiments required of the SL algorithm VS a random process. SL is typically compared to a random process (RP) (i.e., without strategy or model) as a baseline benchmark. RPs consider each candidate as equally likely to succeed (uniform distribution). However, the success rate of RP has a nonlinear relationship with the required draws for the case of multiple targets (the size of the target set is controlled by the target threshold in the "Settings" tab of the "Sequential Learning" window). A low target threshold means that RP becomes a much more difficult benchmark.
+
+![What is this](images/42.png)
+
+#### Result plots
+
+SL's performance is usually benchmarked in the effort it took for the optimization to reach the target, e.g. in terms of the required experiments. This is a powerful benchmark when it comes to comparing different SL approaches but for the lab scientist other questions can be more important, e.g: what performance improvement of my material properties can I expect after a fixed number of algorithms. This is not always an easy question to answer since some parameters are trade-offs (improving one parameter leads to the deterioration of the other). The new result plots make it now easy for scientists to assess the value that SLAMD creates for any number of SL iterations (compared to not using any optimization, i.e. conducting random experiments).  It shows directly the improvement in terms of the units of the target. 
+
+![What is this](images/43.png)
 
 #### History table
 
