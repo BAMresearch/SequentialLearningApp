@@ -37,7 +37,7 @@ To launch a web hosted version of SLAMD, follow the link below. Note that the we
 
 Link: 
 
-https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/main?filepath=voila%2Frender%2FSequentialLearningApp.ipynb
+https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/main?urlpath=voila%2Frender%2FSequentialLearningApp.ipynb
 
 ## Usage
 
