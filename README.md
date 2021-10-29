@@ -31,6 +31,14 @@ jupyter nbextension enable --py widgetsnbextension
 ```
 This app includes the the lolopy Random Forest algorithm with uncertainties from https://github.com/CitrineInformatics/lolo. In order to use this method it is required to instal java SE, e. g. from https://www.oracle.com/java/technologies/javase-jdk16-downloads.html.
 
+### Web-preview 
+
+To launch a web hosted version of SLAMD, follow the link below. Note that the web application may be slow. To get the full performance, we recommend that you install a local copy. 
+
+Link: 
+
+https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/main?urlpath=voila%2Frender%2FSequentialLearningApp.ipynb
+
 ## Usage
 
 Navigate to the Directory where you downloaded this Repository and execute this Command in your Terminal
