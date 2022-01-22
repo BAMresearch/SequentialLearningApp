@@ -4,7 +4,7 @@ Here we present an app for accelerating the experimental search for suitable mat
 
 To determine the performance of SL methods, it is common to use simulated experiments where the ground truth labels for all data points are already known. Initially, only a small fraction is provided to the SL algorithm (although more training data would be available). This is extended with one new data point from the remainder of the available data at each iteration. It is investigated which approach requires the least amount of data to achieve the goal. Approaches that require less data simply lead to faster success in laboratory practice. 
 
-### Thus, the goal is not to actually discover new materials using all available data, but to validate material discovery methods for scenarios where fewer labels are known (e.g., for new materials).
+### SLAMD lets you validate material discovery methods.
 
 The app provides flexible and low-threshold access to AI methods via user interfaces. It is based on "Jupyter Notebooks" and integrates seamlessly with the "AIIDA" workflow environment. The underlying code can be easily customized and extended. The app has intuitive and interactive user interfaces for data import and cleansing/selection, (statistical) data analysis, visualization for exploration and plausibility, AI environment as well as data evaluation and result visualization. Structured material data from CSV files are used.
 
@@ -33,7 +33,7 @@ This app includes the the lolopy Random Forest algorithm with uncertainties from
 
 ### Web-preview 
 
-To launch a web hosted version of SLAMD, follow the link below. Note that the web application may be slow. To get the full performance, we recommend that you install a local copy. 
+To launch a web hosted version of SLAMD, follow the link below. Note that the web application may be slower and does not support all features. To get the full performance, we recommend that you install a local copy. 
 
 Link: 
 
@@ -80,18 +80,24 @@ The Design Space Explorer allows the visualization of complex relationships in t
 ## Sequential Learning
 This window provides a SL framework divided into the tabs "Settings" - here the optimization scenario can be defined - and "Seqential Learning Parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
 
-#### Settings
-This window lets the user interactively set up the boundary conditions of the SL problem. The input feature and target properties can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). The optimization is then based on the sum (or difference - depending on whether maximization or minimization is desired) of the normalized properties. 
-**NEW
-SLAMD can now consider known targets. Not all targets need verification in the lab. Costs and CO2 footprint, for instance, can be collected from databases upfront. However, they can play an important role in optimization, especially in the case of green materials. The new feature "Fixed target selection" now allows to include such data into the optimization. Their uncertainty is considered to be zero in the  MLI and MLID and MU utility.
+#### Comnfigure Optimization
+This window lets the user interactively set up the boundary conditions of the SL problem. The Materials Data (input feature) and target properties can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). 
+The optimization is then based on the sum (or difference - depending on whether maximization or minimization is desired) of the normalized properties. 
 
-The target can be specified as a quantile of the given properties (or their combinations in case of Multi-Objective Optimization). A lower target threshold (e.g. 90%) accelerates the SL optimization. However, this makes it increasingly difficult for SL to outperform a random process. 
-The sample threshold determines the restriction of the initial training data. If it was not restricted, it would be possible that the searched material is already contained in the initial data - which would make SL superfluous. The sample threshold is therefore always lower than the target threshold. 
-The initial sample size can be chosen below. Some SL algorithms require at least 3 samples. It is recommended to not choose less than 4 initial samples. 
+**NEW
+SLAMD can now consider known targets. Not all targets need verification in the lab. Costs and CO2 footprint, for instance, can be collected from databases upfront. However, they can play an important role in optimization, especially in the case of green materials. The new feature "A-priori Information" now allows to include such data into the optimization. Their uncertainty is considered to be zero in the  MLI and MLID and MU utility.
+
+The target can be specified as a quantile of the given properties (or their combinations in case of Multi-Objective Optimization). A lower target threshold (e.g. 90%) accelerates the SL optimization. However, this makes it increasingly difficult for SL to outperform a random process. The target threshold also offers the possibility to define a default value as the optimization limit (to activate it, the check box must be checked).
+
 The "Visualize Settings" button generates a qualitative preview of your selected SL task. It presents your data in reduced dimensions using the TSNE algorithm. The location of the available candidates (Determined by the Sample threshold), the targets (determined by the Target threshold) and the samples that may be explored with SL are displayed in color. This makes it easy to visualize the impact of the thresholds and adding or removing features or targets. 
+The target data table shows the data selected as the target for optimization. This makes it easy to check the plausibility of the above configuration. 
+
 ![What is this](images/4.1.png)
 
 #### Sequential Learning Parameters
+
+The initial sample size and the batch size can be chosen here. Some SL algorithms require at least 3 samples. It is recommended to not choose less than 4 initial samples. 
+
 This tab lets the user select from several Machine Learning (ML) algorithms and utility functions:
 
 (1) Decision Tree Regression - fast but crude algorithm; good for trying different settings and utility functions (min. initial sample size 2); 
