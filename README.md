@@ -8,6 +8,15 @@ To determine the performance of SL methods, it is common to use simulated experi
 
 The app provides flexible and low-threshold access to AI methods via user interfaces. It is based on "Jupyter Notebooks" and integrates seamlessly with the "AIIDA" workflow environment. The underlying code can be easily customized and extended. The app has intuitive and interactive user interfaces for data import and cleansing/selection, (statistical) data analysis, visualization for exploration and plausibility, AI environment as well as data evaluation and result visualization. Structured material data from CSV files are used.
 
+### Web-preview 
+
+To launch a web hosted version of SLAMD, follow the link below. Note that the web application may be slower and does not support all features. To get the full performance, we recommend that you install a local copy. 
+
+Link: 
+
+https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/HEAD?urlpath=voila%2Frender%2Fpath%2Fto%2FSequentialLearningApp.ipynb
+
+
 ## Installation
 
 "SLAMD" needs to install some requirements when not hosted on a Aiidalab plattform.
@@ -30,14 +39,6 @@ After installing the requirements you need to enable the ui elements:
 jupyter nbextension enable --py widgetsnbextension
 ```
 This app includes the the lolopy Random Forest algorithm with uncertainties from https://github.com/CitrineInformatics/lolo. In order to use this method it is required to instal java SE, e. g. from https://www.oracle.com/java/technologies/javase-jdk16-downloads.html.
-
-### Web-preview 
-
-To launch a web hosted version of SLAMD, follow the link below. Note that the web application may be slower and does not support all features. To get the full performance, we recommend that you install a local copy. 
-
-Link: 
-
-https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/main?urlpath=voila%2Frender%2FSequentialLearningApp.ipynb
 
 ## Usage
 
