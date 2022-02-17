@@ -4,9 +4,14 @@ Here we present an app for accelerating the experimental search for suitable mat
 
 To determine the performance of SL methods, it is common to use simulated experiments where the ground truth labels for all data points are already known. Initially, only a small fraction is provided to the SL algorithm (although more training data would be available). This is extended with one new data point from the remainder of the available data at each iteration. It is investigated which approach requires the least amount of data to achieve the goal. Approaches that require less data simply lead to faster success in laboratory practice. 
 
-### SLAMD lets you validate material discovery methods.
+### SLAMD lets you validate materials discovery methods.
 
-The app provides flexible and low-threshold access to AI methods via user interfaces. It is based on "Jupyter Notebooks" and integrates seamlessly with the "AIIDA" workflow environment. The underlying code can be easily customized and extended. The app has intuitive and interactive user interfaces for data import and cleansing/selection, (statistical) data analysis, visualization for exploration and plausibility, AI environment as well as data evaluation and result visualization. Structured material data from CSV files are used.
+The app provides flexible and low-threshold access to AI methods via user interfaces. It is based on "Jupyter Notebooks". The underlying code can be easily customized and extended. The app has intuitive and interactive user interfaces for data import and cleansing/selection, (statistical) data analysis, visualization for exploration and plausibility, AI environment as well as data evaluation and result visualization. Structured material data from CSV files are used.
+
+### SLAMD lets you adopt materials discovery methods into practice.
+
+With the *new* "Materials Discovery" feature, you can perform your optimization in the real world. All you need is an *csv file with your material data and a column with training data from the lab. Materials that do not yet contain data from the lab are automatically identified as candidates. The SL algorithm makes predictions about the expected experimental results for each candidate and sorts them according to their estimated utility. (Full documentation to follow shortly)
+
 
 ### Web-preview 
 
@@ -78,10 +83,10 @@ The Design Space Explorer allows the visualization of complex relationships in t
 ![What is this](images/32.png)
 ![What is this](images/33.png)
 
-## Sequential Learning
+## Benchmarking
 This window provides a SL framework divided into the tabs "Settings" - here the optimization scenario can be defined - and "Seqential Learning Parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
 
-#### Comnfigure Optimization
+#### Configure Optimization
 This window lets the user interactively set up the boundary conditions of the SL problem. The Materials Data (input feature) and target properties can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). 
 The optimization is then based on the sum (or difference - depending on whether maximization or minimization is desired) of the normalized properties. 
 
@@ -131,21 +136,28 @@ SL's performance is usually benchmarked in the effort it took for the optimizati
 
 ![What is this](images/43.png)
 
-#### History table
+#### Log table
 
-The history table is automatically created and stores the settings for each investigated SL scenario. This allows you to easily perform a sensitivity analysis. The table can be downloaded as CSV file. It contains the following information:
+The log table is automatically created and stores the settings and results for each investigated SL scenario. This allows you to easily perform a sensitivity analysis. The table can be downloaded as CSV file. It contains the following information:
 
 ##### SL Benchmarks
-Requ. experiments (mean):  Mean Performance of SL in terms of the average number of experiment (incl. initial sample set) to reach the target
+Req. dev. cycle (mean):  Mean Performance of SL in terms of the average number of experiment (incl. initial sample set) to reach the target
 
-Requ. experiments (std):   Scattering of SL Performance in terms of the standard deviation 
+Req. dev. cycle (std):   Scattering of SL Performance in terms of the standard deviation 
 
-Requ. experiments (90%):   90 % quantile of SL Perormance (this is the performance that has been achieved in 90% of the cases)
+Req. dev. cycle (90%):   90 % quantile of SL Perormance (this is the performance that has been achieved in 90% of the cases)
 
-Requ. experiments (max):   Worst performance (in terms of the maximum required experiments)
+Req. dev. cycle (max):   Worst performance (in terms of the maximum required experiments)
+
+5 cycle perf.:           Performance after 5 development cycles; values range from 0 for no performance to 1 for target achieved. 
+
+10 cycle perf.:          Performance after 10 development cycles; values range from 0 for no performance to 1 for target achieved. 
 
 ##### SL Parameters
-Algorithm: Selected Machien Learning algorithm
+
+Batch size: Size of samples drawn in each dev. cycle
+
+Algorithm: Selected Machine Learning algorithm
 
 Utlity Function: Selected utility function 
 
@@ -172,10 +184,17 @@ Features name: Name of the (input) features
 
 Targets name: Name of the (output) targets
 
+A-priori information: Name of given targets that do not require prediction (e.g. cost, CO2 footprint, etc.)
+
 ##### Detailed Result
 Req. experiments (all): A list of all results in terms of the number of required experiments. 
 
 ![What is this](images/44.png)
+
+## *new* Materials discovery
+
+*description coming soon*
+
 
 ## Conclusion
 Serial data collection of SL, even if more successful than RP, can be detrimental in a real-world application, as waiting for experimental results could delay experimental progress. This is especially the case for materials whose synthesis is complex and whose material properties take time to develop or characterize (e.g., 28-day compressive strength of concrete). Collecting all samples at once or in batches may be more successful. 
