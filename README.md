@@ -80,8 +80,7 @@ This window gives a detailed overview of the uploaded data. Besides the data pre
 ## Design Space Explorer
 The Design Space Explorer allows the visualization of complex relationships in the data. Here, specific dependencies between selected variables can be displayed as a scatter plot, the interrelationships and distributions of the variables can be mapped as a scatter matrix, and correlations can be visualized as a correlation heatmap. These tools allow a quick visual overview, e.g. of co-linearities of the characteristics for feature selection or trade-offs between different material properties, which are to be optimized.
 ![What is this](images/31.png)
-![What is this](images/32.png)
-![What is this](images/33.png)
+
 
 ## Benchmarking
 This window provides a SL framework divided into the tabs "Settings" - here the optimization scenario can be defined - and "Seqential Learning Parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
@@ -106,13 +105,13 @@ The initial sample size and the batch size can be chosen here. Some SL algorithm
 
 This tab lets the user select from several Machine Learning (ML) algorithms and utility functions:
 
-(1) Decision Tree Regression - fast but crude algorithm; good for trying different settings and utility functions (min. initial sample size 2); 
+(1) Decision Tree Regression - fast but crude algorithm; good for trying different settings and utility functions; 
 
-(2) Scikit Random Forest Regression - fast and powerful algorithm; suitable for getting good results (min. initial sample size 2); 
+(2) Scikit Random Forest Regression - fast and powerful algorithm; suitable for getting good results 
 
-(3) Lolopy Random Forest Regression - fast and powerful algorithm; requires instaltation of JAVA SDK; (min. initial sample size 8); 
+(3) Lolopy Random Forest Regression - fast and powerful algorithm; requires instaltation of JAVA SDK;
 
-(4) Gaussian Process Regression - fast and powerful algorithm; (min. initial sample size 2);  
+(4) Gaussian Process Regression - fast and powerful algorithm;  
 
 Some utility functions, such as MEID and MLID, allow to adjust further hyper parameters. As mentioned above, more details on ML algorithms and utility functions can be found in Völker et al. 2021 (Link: http://dx.doi.org/10.13140/RG.2.2.18388.94087/1 ).
 The number of randomized SL runs can be set with the “# of SL runs” slider (standard value=30). The “Run” button executes a simulated experiments where the selected SL algorithms solve the optimization problem that has been specified in the “Settings” tab for the set number of SL runs. 
