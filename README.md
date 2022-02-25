@@ -12,6 +12,11 @@ The app provides flexible and low-threshold access to AI methods via user interf
 
 With the *new* "Materials Discovery" feature, you can perform your optimization in the real world. All you need is an *csv file with your material data and a column with training data from the lab. Materials that do not yet contain data from the lab are automatically identified as candidates. The SL algorithm makes predictions about the expected experimental results for each candidate and sorts them according to their estimated utility. (Full documentation to follow shortly)
 
+### Case-Studies
+
+Völker et al. 2022, entiteled "ACCELERATING THE SEARCH FOR ALKALI ACTIVATED CEMENTS WITH SEQUENTIAL LEARNING", http://dx.doi.org/10.13140/RG.2.2.33502.92480
+
+Völker et al. 2021, entiteled "Sequential learning to accelerate discovery of alkali-activated binders", http://dx.doi.org/10.13140/RG.2.2.18388.94087/1
 
 ### Web-preview 
 
@@ -20,7 +25,6 @@ To launch a web hosted version of SLAMD, follow the link below. Note that the we
 Link: 
 
 https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/HEAD?urlpath=voila%2Frender%2FSequentialLearningApp.ipynb
-
 
 ## Installation
 
@@ -55,9 +59,6 @@ voila SequentialLearningApp.ipynb
 
 A Window in your default browser should open now.
 
-## Background on the used methodology: 
-
-More information on the methodology is available in the publication Völker et al. 2021, entiteled "Sequential learning to accelerate discovery of alkali-activated binders", http://dx.doi.org/10.13140/RG.2.2.18388.94087/1
 
 # Hands on - a quick guide to "SLAMD"
 
