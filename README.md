@@ -14,7 +14,7 @@ With the *new* "Materials Discovery" feature, you can perform your optimization 
 
 ### Case-Studies
 
-Völker et al. 2022, entiteled "ACCELERATING THE SEARCH FOR ALKALI ACTIVATED CEMENTS WITH SEQUENTIAL LEARNING", http://dx.doi.org/10.13140/RG.2.2.33502.92480
+Völker et al. 2022, entiteled "ACCELERATING THE SEARCH FOR ALKALI ACTIVATED CEMENTS WITH SEQUENTIAL LEARNING", http://dx.doi.org/10.13140/RG.2.2.33502.92480/1
 
 Völker et al. 2021, entiteled "Sequential learning to accelerate discovery of alkali-activated binders", http://dx.doi.org/10.13140/RG.2.2.18388.94087/1
 
