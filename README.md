@@ -14,9 +14,11 @@ With the *new* "Materials Discovery" feature, you can perform your optimization 
 
 ### Case-Studies
 
-Völker et al. 2022, entiteled "ACCELERATING THE SEARCH FOR ALKALI ACTIVATED CEMENTS WITH SEQUENTIAL LEARNING", http://dx.doi.org/10.13140/RG.2.2.33502.92480
+Völker et al. 2022, entiteled "ACCELERATING THE SEARCH FOR ALKALI ACTIVATED CEMENTS WITH SEQUENTIAL LEARNING", http://dx.doi.org/10.13140/RG.2.2.33502.92480/1
 
 Völker et al. 2021, entiteled "Sequential learning to accelerate discovery of alkali-activated binders", http://dx.doi.org/10.13140/RG.2.2.18388.94087/1
+
+Example data and SLAMD benchmarking resulsts: https://github.com/BAMcvoelker/SLAMD-FIB-Case-Study 
 
 ### Web-preview 
 
@@ -65,7 +67,10 @@ A Window in your default browser should open now.
 The app is divided into the four main windows "Upload", "Data Info", "Design Space Explorer" and "Sequenital Learning", which are explained below. 
 
 ## Upload
-In the upload window of the app, the materials data in CSV format can be imported via a dialog. An option to set the CSV separator, the decimal separator and to delete non-numeric data is available. Additionally, lines at the beginning of the file can be skipped (e.g., header information, etc.). At the end of this process, the data is displayed to the user to allow a plausibility check. Here it can be checked quickly and easily whether decimal places are specified correctly, and all data are numeric.
+In the upload window, the material data can be imported in CSV or Excel format via a dialog. Benchmarking data must be complete, i.e. for each material composition there must also be (at least) one experimental result. Materials discovery data can be incomplete, i.e. values that have not yet been collected in the lab simply remain empty. SLAMD automatically detects experiments that have already been performed and uses them for training. 
+
+In the upload dialog it is possible to set the CSV separator and the decimal separator and to delete non-numeric data. In addition, lines at the beginning of the file can be skipped (e.g. header data, etc.). At the end of this process, the data is displayed to the user for plausibility checking. Here it can be quickly and easily checked whether the decimal places are correctly specified and all data are numerical.
+
 ![What is this](images/11.png)
 ![What is this](images/12.png)
 ![What is this](images/13.png)
@@ -84,14 +89,13 @@ The Design Space Explorer allows the visualization of complex relationships in t
 
 
 ## Benchmarking
-This window provides a SL framework divided into the tabs "Settings" - here the optimization scenario can be defined - and "Seqential Learning Parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
+This window provides an SL framework for benchmarking SL methods against previously completed research. This allows you to assess the potential benefits of SLAMD for your application. It is divided into the tabs "Settings" - here the optimization scenario can be defined - and "Sequential learning parameters" - here the algorithms can be selected, set and virtual experiments can be performed. 
 
 #### Configure Optimization
 This window lets the user interactively set up the boundary conditions of the SL problem. The Materials Data (input feature) and target properties can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). 
 The optimization is then based on the sum (or difference - depending on whether maximization or minimization is desired) of the normalized properties. 
 
-**NEW
-SLAMD can now consider known targets. Not all targets need verification in the lab. Costs and CO2 footprint, for instance, can be collected from databases upfront. However, they can play an important role in optimization, especially in the case of green materials. The new feature "A-priori Information" now allows to include such data into the optimization. Their uncertainty is considered to be zero in the  MLI and MLID and MU utility.
+SLAMD can now consider a-priori information. Not all targets need verification in the lab. Costs and CO2 footprint, for instance, can be collected from databases upfront. However, they can play an important role in optimization, especially in the case of green materials. The new feature "A-priori Information" now allows to include such data into the optimization. Their uncertainty is considered to be zero in the  MLI and MLID and MU utility.
 
 The target can be specified as a quantile of the given properties (or their combinations in case of Multi-Objective Optimization). A lower target threshold (e.g. 90%) accelerates the SL optimization. However, this makes it increasingly difficult for SL to outperform a random process. The target threshold also offers the possibility to define a default value as the optimization limit (to activate it, the check box must be checked).
 
@@ -193,13 +197,29 @@ Req. experiments (all): A list of all results in terms of the number of required
 
 ## *new* Materials discovery
 
-*description coming soon*
+This window provides a SL framework for practical laboratory applications. it is  divided into the tabs "Configure Optimization" - here the optimization scenario can be defined - and "Seqential Learning" - here the algorithms can be selected, and the results will be presented. 
 
+#### Configure Optimization
+This window lets the user interactively set up the boundary conditions of the SL task. The Materials Data (input feature), target properties and A-priori Information. can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). 
 
-## Conclusion
-Serial data collection of SL, even if more successful than RP, can be detrimental in a real-world application, as waiting for experimental results could delay experimental progress. This is especially the case for materials whose synthesis is complex and whose material properties take time to develop or characterize (e.g., 28-day compressive strength of concrete). Collecting all samples at once or in batches may be more successful. 
-SL therefore targets material innovations for which data are not available or large-scale data collection would be too expensive. However, what actually provides an advantage in the lab depends heavily on how the SL problem is designed. 
-The purpose of "SLAMD" is to provide a tool to quickly explore exactly under what conditions SL can help accelerate research. 
+![What is this](images/5.2.png)
 
+#### Sequential Learning Parameters
 
+This tab lets the user select from several Machine Learning (ML) algorithms and utility functions:
 
+(1) Decision Tree Regression - fast but crude algorithm; good for trying different settings and utility functions; 
+
+(2) Scikit Random Forest Regression - fast and powerful algorithm; suitable for getting good results 
+
+(3) Lolopy Random Forest Regression - fast and powerful algorithm; requires instaltation of JAVA SDK;
+
+(4) Gaussian Process Regression - fast and powerful algorithm;  
+
+MEI - Maximum Expected Improvement (exploit knowledge)
+
+MLI - Maximum Likelihood of Improvement (exploit knowledge and explore new possibilites)
+
+The result is a table containing a list of materials ranked by their respective utility, including predicted properties and the novelty of the mixture. The latter is a measure of how different the material is compared to the training data. Higher novelty usually means higher information gain when performing the experiment. 
+
+![What is this](images/5.1.png)
