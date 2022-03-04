@@ -220,8 +220,3 @@ MLI - Maximum Likelihood of Improvement (exploit knowledge and explore new possi
 The result is a table containing a list of materials ranked by their respective utility, including predicted properties and the novelty of the mixture. The latter is a measure of how different the material is compared to the training data. Higher novelty usually means higher information gain when performing the experiment. 
 
 ![What is this](images/5.2.png)
-
-## Conclusion
-Serial data collection of SL, even if more successful than RP, can be detrimental in a real-world application, as waiting for experimental results could delay experimental progress. This is especially the case for materials whose synthesis is complex and whose material properties take time to develop or characterize (e.g., 28-day compressive strength of concrete). Collecting all samples at once or in batches may be more successful. 
-SL therefore targets material innovations for which data are not available or large-scale data collection would be too expensive. However, what actually provides an advantage in the lab depends heavily on how the SL problem is designed. 
-The purpose of "SLAMD" is to provide a tool to quickly explore exactly under what conditions SL can help accelerate research. 
