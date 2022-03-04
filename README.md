@@ -67,7 +67,10 @@ A Window in your default browser should open now.
 The app is divided into the four main windows "Upload", "Data Info", "Design Space Explorer" and "Sequenital Learning", which are explained below. 
 
 ## Upload
-In the upload window of the app, the materials data in CSV format can be imported via a dialog. An option to set the CSV separator, the decimal separator and to delete non-numeric data is available. Additionally, lines at the beginning of the file can be skipped (e.g., header information, etc.). At the end of this process, the data is displayed to the user to allow a plausibility check. Here it can be checked quickly and easily whether decimal places are specified correctly, and all data are numeric.
+In the upload window, the material data can be imported in CSV or Excel format via a dialog. Benchmarking data must be complete, i.e. for each material composition there must also be (at least) one experimental result. Materials discovery data can be incomplete, i.e. values that have not yet been collected in the lab simply remain empty. SLAMD automatically detects experiments that have already been performed and uses them for training. 
+
+In the upload dialog it is possible to set the CSV separator and the decimal separator and to delete non-numeric data. In addition, lines at the beginning of the file can be skipped (e.g. header data, etc.). At the end of this process, the data is displayed to the user for plausibility checking. Here it can be quickly and easily checked whether the decimal places are correctly specified and all data are numerical.
+
 ![What is this](images/11.png)
 ![What is this](images/12.png)
 ![What is this](images/13.png)
