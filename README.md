@@ -199,7 +199,7 @@ This window provides a SL framework for practical laboratory applications. it is
 #### Configure Optimization
 This window lets the user interactively set up the boundary conditions of the SL task. The Materials Data (input feature), target properties and A-priori Information. can be selected simply by mouse click. It is possible to select multiple target properties (Multi-Objective Optimization). 
 
-![What is this](images/5.1.png)
+![What is this](images/5.2.png)
 
 #### Sequential Learning Parameters
 
@@ -219,4 +219,4 @@ MLI - Maximum Likelihood of Improvement (exploit knowledge and explore new possi
 
 The result is a table containing a list of materials ranked by their respective utility, including predicted properties and the novelty of the mixture. The latter is a measure of how different the material is compared to the training data. Higher novelty usually means higher information gain when performing the experiment. 
 
-![What is this](images/5.2.png)
+![What is this](images/5.1.png)
