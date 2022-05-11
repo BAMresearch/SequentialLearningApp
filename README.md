@@ -132,20 +132,20 @@ Visualization tools are implemented in the Design Space Explorer (1) - e.g. a sc
 
 ## Configure Materials Discovery
 
-In the Materials Discovery window (1) the material optimization is configured. Essentially, the input data (Materials Data (Input)) are selected (2), the target values to be optimized in the laboratory are selected (3) and A-priori information, if available, is also selected (4). In the latter case, of course, a low CO2 footprint is aimed for, which is why minimization must still be clicked here (5). 
+In the Materials Discovery window (1) the material optimization is configured. Essentially, the input data (Materials Data (Input)) are selected (2), the target parameters to be optimized in the laboratory (3) and, if available, also A-priori information (4). In the latter case, of course, the goal is a low CO2 footprint, which is why Minimization must still be checked here (5). If some targets are more important than others, the weighting can be increased (6), e.g. to 2 for CO2. Then slump and fc combined would have the same influence as the CO2 value, thus making CO2 the most important optimization criterion. 
 
-![image](https://user-images.githubusercontent.com/71640597/161925004-01c68e40-32e9-4108-9925-3ef0869c17d5.png)
+<img width="984" alt="image" src="https://user-images.githubusercontent.com/71640597/167775979-1e7d08d6-740e-4a5c-94ba-b4790567c270.png">
+
 
 ## Model Selection and Results 
 
-In the Materials Discovery field (1) the optimization can be executed. Machine learning models and exploration strategies can be specified here (optional). By clicking on the Run button (2), the experiments are sorted by their utility (3). The table that appears below shows the result of the optimization with SLAMD. 
-The calculation of the utility of a material is derived from the predicted material properties (4). The top candidate - in the example with Idx_Sample =1491 - thus has the greatest utility in terms of a good expected property compromise of strength and processability. This materials should be validated in the laboratory next.
+Below the prediction can be executed. The Gaussian process regression from scikit is used for this. You can use the curiosity slider (1) to control the extent to which model uncertainty is taken into account in the utility estimation. A higher value allows you to investigate different material variants more quickly. Then materials with a high prediction uncertainty are preferred. If all relevant materials are already included in the training data during the course of the experimental series, the curiosity can be reduced. 
+By clicking on the "Make Prediction" button (2), the experiments are sorted by their utility (3). The table that appears below shows the result of the optimization with SLAMD. 
+The calculation of the utility of a material is derived from the predicted material properties (4). The top candidate - in the example with Idx_Sample =1491 - thus has the greatest utility in terms of a good expected property compromise of strength (fc) and processability (slump). This material should be validated in the laboratory next.
 To estimate the added value of the formulation, Novelty (5) shows a value normalized between 0 and 1, indicating the difference from the formulations, which are already in the training data. For example, the third candidate (Idx_Sample = 86) has a relatively low Novelty (0.0006). Therefore, this formulation does not seem to represent a major change in composition and might therefore receive a lower priority. After all, the goal is to find new formulations as quickly as possible. 
 The uncertainty of the predictions is shown as a further aid to decision making (6). Again, candidates with larger uncertainties could be specifically prioritized in order to explore formulations more quickly. 
 
-![image](https://user-images.githubusercontent.com/71640597/161924928-c0acea50-1dfa-45ba-b67e-3952dca4dd5a.png)
-
-
+<img width="1008" alt="image" src="https://user-images.githubusercontent.com/71640597/167776038-e77f4255-1dfb-4611-a9ed-dbecd7114b91.png">
 
 
 
