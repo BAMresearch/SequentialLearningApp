@@ -70,8 +70,6 @@ If the number of targets is changed during benchmarking, the result plot may not
 
 In the web preview there may be longer waiting times after a code update because SLAMD has to be reinstalled first.
 
-In the web preview, the Lolo model does not work because it requires Java SDK, which is unfortunately not supported. 
-
 The web preview is hosted on Mybinder. Server failures may occur here. If the program itself does not load after a few minutes or an error message appears, it has been shown that refreshing the page helps. 
 
 The web preview diconnects after about 10 minutes of inactivity. Again, it helps to simply refresh the page. However, all results are then lost. 
@@ -198,15 +196,11 @@ The target data table shows the data selected as the target for optimization. Th
 
 The initial sample size and the batch size can be chosen here. Some SL algorithms require at least 3 samples. It is recommended to not choose less than 4 initial samples. 
 
-This tab lets the user select from several Machine Learning (ML) algorithms and utility functions:
+This tab lets the user select from two algorithms and utility functions:
 
-(1) Decision Tree Regression - fast but crude algorithm; good for trying different settings and utility functions; 
+(1) Lolopy Random Forest Regression - fast and powerful algorithm; requires instaltation of JAVA SDK;
 
-(2) Scikit Random Forest Regression - fast and powerful algorithm; suitable for getting good results 
-
-(3) Lolopy Random Forest Regression - fast and powerful algorithm; requires instaltation of JAVA SDK;
-
-(4) Gaussian Process Regression - fast and powerful algorithm;  
+(2) Gaussian Process Regression - fast and powerful algorithm;  
 
 Some utility functions, such as MEID and MLID, allow to adjust further hyper parameters. As mentioned above, more details on ML algorithms and utility functions can be found in Völker et al. 2021 (Link: http://dx.doi.org/10.13140/RG.2.2.18388.94087/1 ).
 The number of randomized SL runs can be set with the “# of SL runs” slider (standard value=30). The “Run” button executes a simulated experiments where the selected SL algorithms solve the optimization problem that has been specified in the “Settings” tab for the set number of SL runs. 
