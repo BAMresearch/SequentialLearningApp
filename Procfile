@@ -1,1 +1,1 @@
-web: voila --port=$PORT --no-browser sequentiallearningapp.ipynb
+web: voila --port=$PORT --no-browser SequentialLearningApp.ipynb
