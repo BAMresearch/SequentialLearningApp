@@ -79,7 +79,10 @@ The web preview diconnects after about 10 minutes of inactivity. Again, it helps
 This is a short tutorial that uses a practical example to show how SLAMD can be used in the lab. If you want to apply materials discovery in the lab, you are in the right place. If you are looking for a more comprehensive insight into SLAMDS material discovery algorithms and want to compare different methods in different scenarios, please scroll further to the section "A comprehensive guide to SLAMD". 
 
 To start SLAMD:
-👉 You can launch a preview of SLAMD from the following web address: https://mybinder.org/v2/gh/BAMcvoelker/SequentialLearningApp/HEAD?urlpath=voila%2Frender%2FSequentialLearningApp.ipynb
+👉 You can launch a preview of SLAMD from the following web address: 
+
+https://bamslamd.herokuapp.com/
+
 👉 You can find complete installation instructions for a local copy above
 
 ## Required data
