@@ -75,8 +75,8 @@ The web preview is hosted on Mybinder. Server failures may occur here. If the pr
 The web preview diconnects after about 10 minutes of inactivity. Again, it helps to simply refresh the page. However, all results are then lost. 
 
 # SLAMD Tutorial – Materials Discovery
-
-This is a short tutorial that uses a practical example to show how SLAMD can be used in the lab. If you want to apply materials discovery in the lab, you are in the right place. If you are looking for a more comprehensive insight into SLAMDS material discovery algorithms and want to compare different methods in different scenarios, please scroll further to the section "A comprehensive guide to SLAMD". 
+__
+This is a short tutorial that uses a practical example to show how SLAMD can be used in the lab. If you want to apply materials discovery in the lab, you are in the right place. If you are looking for a more comprehensive insight into SLAMDS material discovery algorithms and want to compare different methods in different scenarios, please scroll further to the section "A comprehensive guide to SLAMD". Check out the link for a brief introduction video: https://youtu.be/NhTmx77IbkI
 
 To start SLAMD:
 👉 You can launch a preview of SLAMD from the following web address: 
