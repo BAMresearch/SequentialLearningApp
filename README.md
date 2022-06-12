@@ -70,7 +70,7 @@ If the number of targets is changed during benchmarking, the result plot may not
 
 In the web preview there may be longer waiting times after a code update because SLAMD has to be reinstalled first.
 
-The web preview is hosted on Mybinder. Server failures may occur here. If the program itself does not load after a few minutes or an error message appears, it has been shown that refreshing the page helps. 
+Server failures may occur. If the program does not load after a few minutes or an error message appears, it has been shown that refreshing the page helps. 
 
 The web preview diconnects after about 10 minutes of inactivity. Again, it helps to simply refresh the page. However, all results are then lost. 
 
