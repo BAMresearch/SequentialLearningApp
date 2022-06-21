@@ -244,6 +244,8 @@ Req. dev. cycle (max):   Worst performance (in terms of the maximum required exp
 
 10 cycle perf.:          Performance after 10 development cycles; values range from 0 for no performance to 1 for target achieved. 
 
+normalized (MAE):        Mean average prediction performance of model in final iteration on normalized targets.
+
 ##### SL Parameters
 
 Batch size: Size of samples drawn in each dev. cycle
