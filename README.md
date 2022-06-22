@@ -246,7 +246,7 @@ Req. dev. cycle (max):   Worst performance (in terms of the maximum required exp
 
 normalized (MAE):        Mean average prediction performance of model in final iteration on normalized targets.
 
-normalized (MAE):        Mean squarred prediction performance of model in final iteration on normalized targets.
+normalized (MSE):        Mean squarred prediction performance of model in final iteration on normalized targets.
 
 R^2:                     Coefficient of determination of model in final iteration on normalized targets.
 
