@@ -62,17 +62,9 @@ A Window in your default browser should open now.
 
 ## Known Issues:
 
-It is recommended to refresh the app when you upload a new data set.
-
 Comma errors may occur when uploading Excel data. It is recommended to use the *CSV file format.
 
 If the number of targets is changed during benchmarking, the result plot may not appear. The results will still be saved to the results table, so there will be no loss of data. 
-
-In the web preview there may be longer waiting times after a code update because SLAMD has to be reinstalled first.
-
-Server failures may occur. If the program does not load after a few minutes or an error message appears, it has been shown that refreshing the page helps. 
-
-The web preview diconnects after about 10 minutes of inactivity. Again, it helps to simply refresh the page. However, all results are then lost. 
 
 # SLAMD Tutorial – Materials Discovery
 __
