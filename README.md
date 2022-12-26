@@ -3,10 +3,10 @@
 
 # *NOTE: An updated implementation is deveoloped here: https://github.com/BAMresearch/WEBSLAMD
 
-## Web-preview 
+## Summary
 
-Here we present an app for accelerating the experimental search for suitable materials using machine learning. It is based on "Jupyter Notebooks". The underlying code can be easily customized and extended. 
-Sequential learning (SL) is frequently recognized as having great potential to accelerate materials research with a small number of highly complex data points. SL ranks the experiments based on their utility. This is done by coupling the predictions of a Machine Learning model with a decision rule that guides the experimental procedure. The underlying idea is that not all experiments are equally useful. Some experiments provide more information than others. In contrast to classical design of experiments (DOE), where (only) the experimental parameters are optimized, the potential outcomes of the experiments themselves are the decisive factor. The most promising experiments are preferred over dead-end experiments and experiments whose outcome is already known. Each new experiment is selected to maximize the amount of useful information, e.g., according to, using previous experiments as a guide for the next experiment.
+Here we present an app for accelerating the experimental search for suitable materials using machine learning. It is based on "Jupyter Notebooks". 
+Sequential learning (SL) ranks experiments based on their utility. This is done by coupling the predictions of a Machine Learning model with a decision rule that guides the experimental procedure. The underlying idea is that not all experiments are equally useful. Some experiments provide more information than others. In contrast to classical design of experiments (DOE), where (only) the experimental parameters are optimized, the potential outcomes of the experiments themselves are the decisive factor. The most promising experiments are preferred over dead-end experiments and experiments whose outcome is already known. Each new experiment is selected to maximize the amount of useful information, e.g., according to, using previous experiments as a guide for the next experiment.
 
 ### SLAMD lets you validate materials discovery methods.
 
