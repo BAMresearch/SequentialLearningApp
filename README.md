@@ -1,4 +1,4 @@
- # Sequential Learning App for Materials Discovery ("SLAMD")
+ # Sequential Learning App for Materials Discovery ("SLAMD") Benchmarking
 
 
 # *NOTE: An updated implementation is deveoloped here: https://github.com/BAMresearch/WEBSLAMD
@@ -57,38 +57,6 @@ voila SequentialLearningApp.ipynb
 
 A Window in your default browser should open now.
 
-## Known Issues:
-
-Comma errors may occur when uploading Excel data. It is recommended to use the *CSV file format.
-
-If the number of targets is changed during benchmarking, the result plot may not appear. The results will still be saved to the results table, so there will be no loss of data. 
-
-# SLAMD Tutorial – Materials Discovery
-__
-This is a short tutorial that uses a practical example to show how SLAMD can be used in the lab. If you want to apply materials discovery in the lab, you are in the right place. If you are looking for a more comprehensive insight into SLAMDS material discovery algorithms and want to compare different methods in different scenarios, please scroll further to the section "A comprehensive guide to SLAMD". Check out the link for a brief introduction video: https://youtu.be/NhTmx77IbkI
-
-To start SLAMD:
-👉 You can launch a preview of SLAMD from the following web address: 
-
-https://bamslamd.herokuapp.com/
-
-👉 You can find complete installation instructions for a local copy above
-
-## Required data
-Generally speaking, suitable data characterizes the finished product well. It contains information on the composition and structure of the starting materials, processing steps such as post-treatment and storage conditions, and possibly known properties of the finished products (e.g. a priori information such as carbon footprint, cost delivery times). 
-The sample data in the repository includes the following information:
-
-### Material Data: 
-Composition of the starting materials and structure: molecular composition of the starting materials from XRD (SiO2, CaO, SO3).
-Mixture composition (fly ash and slag, fine and coarse aggregates, water, activator chemicals (Na2SiO3, Na2O (Dry), Sio2 (Dry), superplasticizer.
-### Target: 
-The Experimentally determined cement properties: Compressive strength (MPa) and slump flow (in mm).
-e data are incomplete and include NaNs for the formulations that have not yet been experimentally explored in the laboratory. 
-### A-priori Information: 
-Existing properties of finished products: CO2 footprint
-
-![image](https://user-images.githubusercontent.com/71640597/161924228-a946953e-085d-4861-8295-b6695ffbe7ee.png)
-
 ## Upload data with SLAMD
 
 Clicking the Upload button opens the upload dialog.
@@ -125,20 +93,6 @@ Visualization tools are implemented in the Design Space Explorer (1) - e.g. a sc
 In the Materials Discovery window (1) the material optimization is configured. Essentially, the input data (Materials Data (Input)) are selected (2), the target parameters to be optimized in the laboratory (3) and, if available, also A-priori information (4). In the latter case, of course, the goal is a low CO2 footprint, which is why Minimization must still be checked here (5). If some targets are more important than others, the weighting can be increased (6), e.g. to 2 for CO2. Then slump and fc combined would have the same influence as the CO2 value, thus making CO2 the most important optimization criterion. 
 
 <img width="984" alt="image" src="https://user-images.githubusercontent.com/71640597/167775979-1e7d08d6-740e-4a5c-94ba-b4790567c270.png">
-
-
-## Results
-
-In the following, the prediction can be performed. The Gaussian process regression from scikit is used for this. The Curiosity slider (1) allows you to control the extent to which the model explores new material variants ( More precisely, this value corresponds to the weight of the prediction uncertainty in the utility estimate).  
-A higher value enables you to discover "moon-shot" materials that are different from the training materials. This is recommended at the beginning of experimentation and for long-term studies. A low curiosity is recommended when sufficient training data are available, the models are safer, and the training data are close to a target. This more exploitative approach is favorable when deadlines are pressing. If it is unsure, curiosity can be left at a value of 1. 
-By clicking on the "Make Prediction" button (2), the experiments are sorted by their utility (3). The table that appears below shows the result of the optimization with SLAMD. 
-The calculation of the utility of a material is derived from the predicted material properties (4). The top candidate - in the example with Idx_Sample =1491 - thus has the greatest utility in terms of a good expected property compromise of strength (fc) and processability (slump). This material should be validated in the laboratory next. If the predicted combination of properties is too dominated by one target value, its weighting can be reduced above or the weighting of the undervalued targets can be increased. In this way, the property trade-off can be precisely adapted to the corresponding requirements. 
-To estimate the added value of the formulation, Novelty (5) shows a value normalized between 0 and 1, indicating the difference from the formulations, which are already in the training data. For example, the third candidate (Idx_Sample = 86) has a relatively low Novelty (0.0006). Therefore, this formulation does not seem to represent a major change in composition and might therefore receive a lower priority. After all, the goal is to find new formulations as quickly as possible. 
-The uncertainty of the predictions is shown as a further aid to decision making (6). Again, candidates with larger uncertainties could be specifically prioritized in order to explore formulations more quickly. 
-
-<img width="1008" alt="image" src="https://user-images.githubusercontent.com/71640597/167776038-e77f4255-1dfb-4611-a9ed-dbecd7114b91.png">
-
-
 
 
 
