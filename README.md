@@ -1,4 +1,4 @@
-# SLAMD - Sequential Learning Benchmarking App
+# SLAMD - Benchmarking App
 
 1. [General Information](#general-information)
 2. [Sequential Learning](#sequential-learning)
@@ -10,7 +10,7 @@
 
 ## General Information
 
-This repository supplements our app "SLAMD - Sequential Learning App for Materials Discovery".
+This repository supplements our app "SLAMD - Sequential Learning App for Materials Design".
 If you are interested in checking it out visit <https://github.com/BAMresearch/WEBSLAMD> and <https://slamd-demo.herokuapp.com/>
 
 Here we focus on evaluating Sequential Learning on various datasets from the literature. 
